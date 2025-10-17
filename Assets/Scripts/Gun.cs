@@ -1,10 +1,14 @@
 using UnityEngine;
+<<<<<<< HEAD
 using TMPro; // Dùng nếu có UI hiển thị số đạn
+=======
+>>>>>>> 061993557d81537aa292318782a916b84d3e9f87
 
 public class Gun : MonoBehaviour
 {
     private float rotateOffset = 180f;
     [SerializeField] private Transform firePoint;
+<<<<<<< HEAD
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float shotDelay = 0.15f;
     [SerializeField] private int maxAmmo = 30;
@@ -27,10 +31,21 @@ public class Gun : MonoBehaviour
         currentAmmo = maxAmmo;
         audioSource = GetComponent<AudioSource>();
         UpdateAmmoUI();
+=======
+    [SerializeField] private GameObject bulletPrefabs;
+    [SerializeField] private float shotDelay = 0.15f;
+    private float nextShot;
+    [SerializeField] private int maxAmmo = 30;
+    public int currentAmmo;
+    void Start()
+    {
+        currentAmmo = maxAmmo;
+>>>>>>> 061993557d81537aa292318782a916b84d3e9f87
     }
 
     void Update()
     {
+<<<<<<< HEAD
         if (isReloading) return;
 
         RotateGun();
@@ -56,6 +71,22 @@ public class Gun : MonoBehaviour
         
         // Lật súng khi xoay sang bên trái
         if (angle <-90 || angle > 90)
+=======
+        RotateGun();
+        Shoot();
+        Reload();
+    }
+    void RotateGun()
+    {
+        if(Input.mousePosition.x < 0 || Input.mousePosition.x > Screen.width || Input.mousePosition.y < 0  || Input.mousePosition.y > Screen.height)
+        {
+            return;
+        }
+        Vector3 dislacement = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        float angle = Mathf.Atan2(dislacement.y, dislacement.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + rotateOffset));
+        if(angle > 90 || angle < -90)
+>>>>>>> 061993557d81537aa292318782a916b84d3e9f87
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
@@ -64,6 +95,7 @@ public class Gun : MonoBehaviour
             transform.localScale = new Vector3(1, -1, 1);
         }
     }
+<<<<<<< HEAD
 
     void Shoot()
     {
@@ -106,4 +138,22 @@ public class Gun : MonoBehaviour
         if (ammoText)
             ammoText.text = $"{currentAmmo}/{maxAmmo}";
     }
+=======
+    void Shoot()
+    {
+       if(Input.GetMouseButton(0) && currentAmmo > 0 && Time.time > nextShot)
+        {
+            nextShot = Time.time + shotDelay;
+            Instantiate(bulletPrefabs, firePoint.position, transform.rotation);
+            currentAmmo--;
+        }
+    }
+    void Reload()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            currentAmmo = maxAmmo;
+        }
+    }    
+>>>>>>> 061993557d81537aa292318782a916b84d3e9f87
 }

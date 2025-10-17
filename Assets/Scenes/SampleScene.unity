@@ -387,6 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1198309666}
+<<<<<<< HEAD
   bulletPrefab: {fileID: 8867016260459877118, guid: 8b8c93d960caab743ba4591bbbc6c135, type: 3}
   shotDelay: 0.15
   maxAmmo: 30
@@ -394,6 +395,12 @@ MonoBehaviour:
   ammoText: {fileID: 0}
   shootSound: {fileID: 0}
   reloadSound: {fileID: 0}
+=======
+  bulletPrefabs: {fileID: 8867016260459877118, guid: 8b8c93d960caab743ba4591bbbc6c135, type: 3}
+  shotDelay: 0.15
+  maxAmmo: 30
+  currentAmmo: 0
+>>>>>>> 061993557d81537aa292318782a916b84d3e9f87
 --- !u!212 &834843744
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -673,13 +680,18 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198309665}
   serializedVersion: 2
+<<<<<<< HEAD
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+=======
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+>>>>>>> 061993557d81537aa292318782a916b84d3e9f87
   m_LocalPosition: {x: 0.477, y: 0.183, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 834843742}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1871216690
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +739,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> 061993557d81537aa292318782a916b84d3e9f87
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -734,4 +748,7 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1074995980}
+<<<<<<< HEAD
   - {fileID: 1871216692}
+=======
+>>>>>>> 061993557d81537aa292318782a916b84d3e9f87
